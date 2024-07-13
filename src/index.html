@@ -3,14 +3,72 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tauri HTMX CRUD App</title>
+  <title>Tauri - Javascript & Rust</title>
   <script src="htmx.min.js"></script>
   <script src="htmx-tauri.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1, h2, h3, h4 {
+      color: #333;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    ul li {
+      background: #eee;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 4px;
+    }
+    .row {
+      margin-bottom: 20px;
+    }
+    input, button {
+      padding: 10px;
+      margin-right: 10px;
+    }
+    button {
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1>HTMX-RUST</h1>
-    <h2>The security first minimalist tech stack</h2>
+    <h1>HTMX-JS-Rust</h1>
+    <h4>The security-first minimalist tech stack for desktop apps</h4>
+
+    <h2>Front-End</h2>
+    <h3>HTMX:</h3>
+    <ul>
+      <li><strong>Dynamic Interactions:</strong> Enables dynamic web interactions using HTML attributes, minimizing the need for complex JavaScript.</li>
+      <li><strong>Simplified Front-End:</strong> Reduces front-end complexity and enhances maintainability.</li>
+    </ul>
+
+    <h3>CSS:</h3>
+    <ul>
+      <li><strong>Styling and Layout:</strong> Provides flexible styling and layout for web pages, enhancing visual appeal and responsiveness.</li>
+    </ul>
+
+    <h2>Back-End</h2>
+    <h3>Rust:</h3>
+    <ul>
+      <li><strong>Performance:</strong> Ideal for performance-critical operations with memory safety and concurrency.</li>
+      <li><strong>Security:</strong> Prevents many security vulnerabilities through strict compiler checks.</li>
+    </ul>
+    <h4>Tell Rust Your Name</h4>
     <div class="row">
       <input id="greet-input" name="name" placeholder="Enter a name..." />
       <button hx-post="command:greet" 
@@ -24,6 +82,69 @@
               hx-swap="innerHTML">Reset</button>
     </div>
     <div id="greet-msg"></div>
+
+    <h3>Tauri:</h3>
+    <ul>
+      <li><strong>Native Desktop Apps:</strong> Builds small, fast, and secure native desktop apps using web technologies.</li>
+      <li><strong>Rust Integration:</strong> Leverages Rust for backend logic, ensuring high performance and security.</li>
+    </ul>
+
+    <h2>Versatile Tools</h2>
+    <h3>JavaScript, in all its glory:</h3>
+    <ul>
+      <li><strong>NPM Ecosystem:</strong> Access to a vast library of packages for rapid development.</li>
+      <li><strong>TypeScript:</strong> Enhances JavaScript with static types for improved code quality.</li>
+    </ul>
+
+    <h3>Python, effortless interaction:</h3>
+    <ul>
+      <li><strong>Versatility:</strong> Perfect for scripting, automation, and backend services.</li>
+      <li><strong>Flask:</strong> Lightweight framework for building and deploying web applications.</li>
+    </ul>
+
+    <h4>Scan a network to see which ports are in use (Use 127.0.0.1 to scan your own!)</h4>
+    <div class="row">
+      <input id="scan-input" name="ip" placeholder="Enter IP address..." />
+      <button hx-post="command:scan_network" 
+              hx-include="[name='ip']" 
+              hx-trigger="click" 
+              hx-target="#scan-results" 
+              hx-swap="innerHTML">Scan Network</button>
+    </div>
+    <div class="row">
+      <p>Ports In Use: <div id="scan-results"></div></p>
+    </div>
+
+    <h2>Additional Integrations</h2>
+    <h3>GitHub:</h3>
+    <ul>
+      <li><strong>Version Control:</strong> Effective codebase management and collaboration.</li>
+    </ul>
+
+    <h3>CI/CD:</h3>
+    <ul>
+      <li><strong>Automation:</strong> Streamlines testing, building, and deployment processes.</li>
+    </ul>
+
+    <h3>Cloud:</h3>
+    <ul>
+      <li><strong>Scalability:</strong> Deploy scalable applications on cloud platforms.</li>
+    </ul>
+
+    <h2>Ideal Use Cases</h2>
+    <ul>
+      <li><strong>DevSecOps:</strong> Automate security practices and CI/CD pipelines.</li>
+      <li><strong>Pen Testers:</strong> Create custom security testing tools.</li>
+      <li><strong>Blockchain Developers:</strong> Develop high-performance decentralized applications.</li>
+      <li><strong>System Administrators:</strong> Automate system administration tasks.</li>
+      <li><strong>Web Developers:</strong> Build fast, secure, and maintainable web applications.</li>
+      <li><strong>Desktop App Developers:</strong> Create small, fast, and secure native desktop applications.</li>
+      <li><strong>Network Administrators:</strong> Develop network monitoring and management tools.</li>
+      <li><strong>Security Researchers:</strong> Build custom security tools and utilities.</li>
+      <li><strong>Security Auditors:</strong> Develop custom auditing tools to automate data and documentation tasks.</li>
+    </ul>
+
+    <p>This minimalist tech stack provides a secure, efficient, and versatile environment for modern web and desktop application development, combining HTMX, CSS, Rust, Tauri, JavaScript, and Python to create high-performance, maintainable applications.</p>
   </div>
 </body>
 </html>

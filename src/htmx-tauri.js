@@ -1,4 +1,5 @@
 //from tauri-plugin-htmx 
+//it should really be built in Tauri, but it's not there yet
 const {invoke} = window.__TAURI__.tauri;
 
 const COMMAND_PREFIX = "command:";
