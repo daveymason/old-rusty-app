@@ -43,6 +43,19 @@
     button {
       cursor: pointer;
     }
+    .card {
+      background: #eee;
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 4px;
+      box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+    }
+    .card h3 {
+      margin: 0;
+    }
+    .card p {
+      margin: 5px 0;
+    }
   </style>
 </head>
 <body>
@@ -115,36 +128,17 @@
       <p>Ports In Use: <div id="scan-results"></div></p>
     </div>
 
-    <h2>Additional Integrations</h2>
-    <h3>GitHub:</h3>
-    <ul>
-      <li><strong>Version Control:</strong> Effective codebase management and collaboration.</li>
-    </ul>
-
-    <h3>CI/CD:</h3>
-    <ul>
-      <li><strong>Automation:</strong> Streamlines testing, building, and deployment processes.</li>
-    </ul>
-
-    <h3>Cloud:</h3>
-    <ul>
-      <li><strong>Scalability:</strong> Deploy scalable applications on cloud platforms.</li>
-    </ul>
-
-    <h2>Ideal Use Cases</h2>
-    <ul>
-      <li><strong>DevSecOps:</strong> Automate security practices and CI/CD pipelines.</li>
-      <li><strong>Pen Testers:</strong> Create custom security testing tools.</li>
-      <li><strong>Blockchain Developers:</strong> Develop high-performance decentralized applications.</li>
-      <li><strong>System Administrators:</strong> Automate system administration tasks.</li>
-      <li><strong>Web Developers:</strong> Build fast, secure, and maintainable web applications.</li>
-      <li><strong>Desktop App Developers:</strong> Create small, fast, and secure native desktop applications.</li>
-      <li><strong>Network Administrators:</strong> Develop network monitoring and management tools.</li>
-      <li><strong>Security Researchers:</strong> Build custom security tools and utilities.</li>
-      <li><strong>Security Auditors:</strong> Develop custom auditing tools to automate data and documentation tasks.</li>
-    </ul>
-
-    <p>This minimalist tech stack provides a secure, efficient, and versatile environment for modern web and desktop application development, combining HTMX, CSS, Rust, Tauri, JavaScript, and Python to create high-performance, maintainable applications.</p>
+    <h3>Communicate with FHIR</h3>
+    <div class="row">
+      <button hx-post="command:search_patients" 
+              hx-trigger="click" 
+              hx-target="#fhir-patient-cards" 
+              hx-swap="innerHTML">Get Pateints</button>
+    </div>
+    <div class="row" id="fhir-patient-cards">
+      
+    </div>
   </div>
+
 </body>
-</html>
+</html
