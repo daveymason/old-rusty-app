@@ -1197,18 +1197,6 @@ dependencies = [
 ]
 
 [[package]]
-name = "htmx-rust"
-version = "0.0.1"
-dependencies = [
- "base64 0.13.1",
- "reqwest",
- "serde",
- "serde_json",
- "tauri",
- "tauri-build",
-]
-
-[[package]]
 name = "http"
 version = "0.2.12"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1789,6 +1777,18 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "081b846d1d56ddfc18fdf1a922e4f6e07a11768ea1b92dec44e42b72712ccfce"
 dependencies = [
  "memchr",
+]
+
+[[package]]
+name = "old-rusty-app"
+version = "0.0.1"
+dependencies = [
+ "base64 0.13.1",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "tauri",
+ "tauri-build",
 ]
 
 [[package]]

@@ -1,5 +1,5 @@
 [package]
-name = "htmx-rust"
+name = "old-rusty-app"
 version = "0.0.1"
 description = "The minimalist safety first tech stack"
 authors = ["Davey Mason"]
