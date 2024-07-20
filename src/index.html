@@ -33,21 +33,6 @@
       </div>
 
       <div class="box">
-        <h3>Scan a network with Python</h3>
-        <p>Quick & Easy Integration</p>
-        <div class="row">
-          <input id="scan-input" name="ip" placeholder="Enter IP address..." />
-          <button hx-post="command:scan_network" hx-include="[name='ip']" hx-trigger="click" hx-target="#scan-results" hx-swap="innerHTML">Scan Network</button>
-        </div>
-        <p>Ports In Use:
-          <div id="scan-results"></div>
-        </p>
-      </div>
-    </div>
-    <div class="divider"></div>
-
-    <div class="flex-container">
-      <div class="box">
         <h3>Auto Encrypt</h3>
         <p>Secure your messages with Rust</p>
         <div class="row">
@@ -58,28 +43,34 @@
           <div id="encrypt-msg"></div>
         </p>
       </div>
-      <div class="box">
 
-        <h3>Auto Decrypt</h3>
-        <p>Decrypt your messages with Rust</p>
+
+    </div>
+    <div class="divider"></div>
+
+    <div class="flex-container">
+      <div class="box">
+        <h3>Scan a network with Python</h3>
+        <p>Quick & Easy Integration</p>
         <div class="row">
-          <input id="decrypt-input" name="message" placeholder="Enter an encrypted message..." />
-          <button hx-post="command:decrypt" hx-include="[name='message']" hx-trigger="click" hx-target="#decrypt-msg" hx-swap="innerHTML">Decrypt</button>
+          <input id="scan-input" name="ip" placeholder="Enter IP address..." />
+          <button hx-post="command:scan_network" hx-include="[name='ip']" hx-trigger="click" hx-target="#scan-results" hx-swap="innerHTML">Scan Network</button>
         </div>
-        <p>Decrypted Message:
-          <div id="decrypt-msg"></div>
+        <p>Ports In Use:
+          <div id="scan-results"></div>
         </p>
       </div>
 
-      </div>
+
+    </div>
 
     <div class="flex-container">
       <div class="box">
         <h3>Communicate with FHIR</h3>
         <div class="row">
-          <button hx-post="command:search_patients" hx-trigger="click" hx-target="#fhir-patient-cards" hx-swap="innerHTML">Get Patients</button>
+          <button hx-post="command:search_patients" hx-trigger="click" hx-target="#fhir-data" hx-swap="innerHTML">Get Patients</button>
         </div>
-      <div class="row" id="fhir-patient-cards">
+      <div class="row" id="fhir-data">
         <!-- Cards will be populated here -->
       </div>
       </div>
