@@ -1,29 +1,82 @@
 <!doctype html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tauri HTMX CRUD App</title>
+  <title>Tauri - Javascript & Rust</title>
   <script src="htmx.min.js"></script>
   <script src="htmx-tauri.js"></script>
+  <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body>
   <div class="container">
-    <h1>HTMX-RUST</h1>
-    <h2>The security first minimalist tech stack</h2>
-    <div class="row">
-      <input id="greet-input" name="name" placeholder="Enter a name..." />
-      <button hx-post="command:greet" 
-              hx-include="[name='name']" 
-              hx-trigger="click" 
-              hx-target="#greet-msg" 
-              hx-swap="innerHTML">Greet</button>
-      <button hx-get="command:reset" 
-              hx-trigger="click" 
-              hx-target="#greet-msg" 
-              hx-swap="innerHTML">Reset</button>
+    <div class="header">
+      <div class="logo">
+        <img src="logo.png" alt="Steampunk Crab Logo" class="mainLogo" height="80px" width="80px">
+      </div>
     </div>
-    <div id="greet-msg"></div>
+    <div class="divider"></div>
+    <div class="flex-container">
+      <div class="box">
+        <h3>Tell Old Rusty Your Name:</h3>
+        <p>Minimalist Frontend - Maximum Security</p>
+        <div class="row">
+          <input id="greet-input" name="name" placeholder="Enter a name..." />
+          <button hx-post="command:greet" hx-include="[name='name']" hx-trigger="click" hx-target="#greet-msg" hx-swap="innerHTML">Greet</button>
+          <button hx-get="command:reset" hx-trigger="click" hx-target="#greet-msg" hx-swap="innerHTML">Reset</button>
+        </div>
+        <p>Name:
+          <div id="greet-msg"></div>
+        </p>
+      </div>
+
+      <div class="box">
+        <h3>Auto Encrypt</h3>
+        <p>Secure your messages with Rust</p>
+        <div class="row">
+          <input id="encrypt-input" name="message" placeholder="Enter a message..." />
+          <button hx-post="command:encrypt" hx-include="[name='message']" hx-trigger="click" hx-target="#encrypt-msg" hx-swap="innerHTML">Encrypt</button>
+        </div>
+        <p>Encrypted Message:
+          <div id="encrypt-msg"></div>
+        </p>
+      </div>
+
+
+    </div>
+    <div class="divider"></div>
+
+    <div class="flex-container">
+      <div class="box">
+        <h3>Scan a network with Python</h3>
+        <p>Quick & Easy Integration</p>
+        <div class="row">
+          <input id="scan-input" name="ip" placeholder="Enter IP address..." />
+          <button hx-post="command:scan_network" hx-include="[name='ip']" hx-trigger="click" hx-target="#scan-results" hx-swap="innerHTML">Scan Network</button>
+        </div>
+        <p>Ports In Use:
+          <div id="scan-results"></div>
+        </p>
+      </div>
+
+
+    </div>
+
+    <div class="flex-container">
+      <div class="box">
+        <h3>Communicate with FHIR</h3>
+        <div class="row">
+          <button hx-post="command:search_patients" hx-trigger="click" hx-target="#fhir-data" hx-swap="innerHTML">Get Patients</button>
+        </div>
+      <div class="row" id="fhir-data">
+        <!-- Cards will be populated here -->
+      </div>
+      </div>
+
+    </div>
   </div>
 </body>
+
 </html>
